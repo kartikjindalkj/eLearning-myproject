@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div align="center" class="container my-2">
+	<a th:href="@{/RegistrationForm}" class="btn btn-primary btn-sm mb-3">User Registration</a>
+		<h1>USER LIST</h1>
+		<table class="table" border="1">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">User ID</th>
+					<th scope="col">User Name</th>
+					<th scope="col">Password</th>
+					<th scope="col">User Email</th>
+					<th scope="col">Address</th>
+					<th scope="col">Registration Date</th>
+					<th scope="col">Contact</th>
+					<th scope="col">User photo</th>
+					<th scope="col">Actions</th>
+			</thead>
+			<tbody>
+				<tr th:each="user:${listUsers}" >
+					<td th:text="${user.id}"></td>
+					<td th:text="${user.username}"></td>
+					<td th:text="${user.password}" ></td>
+					<td th:text="${user.email}"></td>
+					<td th:text="${user.address}"></td>
+					<td th:text="${user.reg_date}"></td>
+					<td th:text="${user.phone}"></td>
+					<td th:text="${user.photo}"></td>
+					<td><a th:href="@{/showUserforUpdate/{id}(id=${user.id})}" class="btn btn-primary">Update</a>
+					<a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+					</td>		
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
