@@ -1,4 +1,4 @@
-package com.project.springboot.service;
+package com.project.springboot.serviceimplement;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.springboot.model.User;
 import com.project.springboot.repository.UserRepository;
+import com.project.springboot.service.UserService;
 
 @Service
 public class UserServiceImp implements UserService{

@@ -1,6 +1,5 @@
 package com.project.springboot.controller;
 
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +28,17 @@ public class UserController {
 	 */
 	
 	//Display List of all Users
-	@GetMapping("/")
-	public String viewHomePage(Model model) {
+	@GetMapping("/ViewallUsers")
+	public String viewallUsers(Model model) {
 		model.addAttribute("listUsers",userService.getAllUsers());
+		return "ViewAllUsers";
+	}
+	
+	
+	
+	@GetMapping("/")
+	public String viewHomePage() {
+		
 		return "index";
 	}
 	

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View All Admins</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+<div align="center" class="container my-2">
+<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home Page</a>
+<h1>ADMIN LIST</h1>
+		<table class="table" border="1">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Admin ID</th>
+					<th scope="col">Admin Name</th>
+					<th scope="col">Password</th>
+					<th scope="col">Admin Email</th>
+					<th scope="col">Actions</th>
+			</thead>
+			<tbody>
+				<tr th:each="admin:${listAdmins}" >
+					<td th:text="${admin.admin_id}"></td>
+					<td th:text="${admin.name}"></td>
+					<td th:text="${admin.password}" ></td>
+					<td th:text="${admin.email}"></td>
+					<td>
+					<a th:href="@{/showAdminforUpdate/{id}(id=${admin.admin_id})}" class="btn btn-primary">Update</a>
+					<a th:href="@{/deleteAdmin/{id}(id=${admin.admin_id})}" class="btn btn-danger">Delete</a>
+					</td>		
+				</tr>
+			</tbody>
+		</table>
+</div>
+</body>
+</html>
