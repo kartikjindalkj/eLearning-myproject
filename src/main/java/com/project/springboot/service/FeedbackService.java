@@ -10,4 +10,6 @@ public interface FeedbackService {
 	void saveFeedback(Feedback feedback);
 	Feedback getFeedbackbyId(int id);
 	void deleteFeedbackbyId(int id);
+	List<Feedback> getFeedbackbyUserId(int id);
+
 }

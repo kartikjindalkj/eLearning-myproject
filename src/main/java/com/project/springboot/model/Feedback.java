@@ -6,12 +6,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "feedback")
+@Table(name = "feedbacks")
 public class Feedback {
 
 	@Id
 	@Column(name = "f_id")
 	private int id;
+	private String name;
+	private String email;
+	private String feedback;
+	@Column(name = "user_id")
+	private int user_id;
+	
+
 	
 	public int getId() {
 		return id;
@@ -43,9 +50,6 @@ public class Feedback {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	private String name;
-	private String email;
-	private String feedback;
-	private int user_id;
+	
 	
 }

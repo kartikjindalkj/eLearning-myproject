@@ -36,6 +36,9 @@
 					<td th:text="${user.photo}"></td>
 					<td><a th:href="@{/showUserforUpdate/{id}(id=${user.id})}" class="btn btn-primary">Update</a>
 					<a th:href="@{/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+					<a th:href="@{/feedbackRegistrationForm/{id}(id=${user.id})}" class="btn btn-primary">Add Feedback</a>
+					<a th:href="@{/ViewUserFeedbacks/{id}(id=${user.id})}" class="btn btn-primary">View All Feedbacks of this User</a>
+					
 					</td>		
 				</tr>
 			</tbody>

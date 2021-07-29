@@ -48,6 +48,23 @@ public class FeedbackServiceImp implements FeedbackService{
 		// TODO Auto-generated method stub
 		this.feedbackRepository.deleteById(id);
 	}
+
+	
+	@Override
+	public List<Feedback> getFeedbackbyUserId(int id) {
+		// TODO Auto-generated method stub
+//		Optional<Feedback> optional=feedbackRepository.findById(id);
+		
+		List<Feedback> feedbacklist=(List<Feedback>) feedbackRepository.findAllByUserId(id);
+//		Feedback feedback=null;
+//		if(optional.isPresent()) {
+//			feedback=optional.get();
+//			feedbacklist.add(feedback);
+//		}
+//		System.out.println("part3:"+feedbacklist);
+		return feedbacklist;
+		}
+	
 	
 	
 }

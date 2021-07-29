@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View One User all Feedbacks</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+<div align="center" class="container my-2">
+<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home Page</a>
+<h1>ONE USER -ALL FEEDBACK LIST</h1>
+		<table class="table" border="1">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Feedback ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">User Id</th>
+					<th scope="col">Email</th>
+					<th scope="col">Feedback</th>
+					<th scope="col">Actions</th>
+			</thead>
+			<tbody>
+				<tr th:each="feedback:${OneUserFeedbacks}" >
+					<td th:text="${feedback.id}"></td>
+					<td th:text="${feedback.name}"></td>
+					<td th:text="${feedback.user_id}" ></td>
+					<td th:text="${feedback.email}"></td>
+					<td th:text="${feedback.feedback}"></td>
+					<td>
+<!-- 					<a th:href="@{/showAdminforUpdate/{id}(id=${admin.admin_id})}" class="btn btn-primary">Update</a> -->
+					<a th:href="@{/deleteFeedback/{id}(id=${feedback.id})}" class="btn btn-danger">Delete</a>
+<!-- 						<a th:href="@{/ViewUserFeedbacks/{id}(id=${feedback.user_id})}" class="btn btn-primary">View All Feedbacks of this User</a> -->
+					</td>		
+				</tr>
+			</tbody>
+		</table>
+</div>
+</body>
+</html>

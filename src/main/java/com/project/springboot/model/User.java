@@ -26,6 +26,8 @@ public class User {
 	private String reg_date;
 	private String phone;
 	private String photo;
+	
+	
 	public int getId() {
 		return id;
 	}
